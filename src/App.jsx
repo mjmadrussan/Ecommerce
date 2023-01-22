@@ -10,7 +10,7 @@ function App() {
       <NavBar />
       <ItemListContainer greeting="Saludos"/>
       <header className="App-header">
-        Bienvenido a Shoe store
+        Shoe store
       </header>
       <main>
         
