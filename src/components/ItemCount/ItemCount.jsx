@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { Container, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import zapatillas from '../../assets/images/sneakers.png';
 import swal from 'sweetalert';
 import './ItemCount.css';
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({stock, initial, onAdd, itemName}) => {
     const [count, setCount] = useState(initial)
   
     const handleAgregar = () => {
@@ -22,19 +22,13 @@ const ItemCount = ({stock, initial}) => {
       }
     }
   
-  const handleOnAdd = () => {
-          swal(count + " items agregados al carrito", "", "success");
+  const handleOnAdd = () => {          
+          swal(count + " " + itemName + " agregado al carrito", "", "success");
       } 
   
   
     return (
       <>
-        <Container>
-        <div className="card producto shadow-lg p-3 mb-5 bg-warning rounded">
-    <img src={zapatillas} className="card-img-top" alt="hamburguesa" />
-    <div className="card-body">
-      <h5 className="card-title">Zapatillas deportivas</h5>
-      <p className="card-text">Zapatillas deportivas con cordones</p>
       <div className="input-group mb-3">
           <div className="input-group-prepend">
             <Button onClick={handleRestar} className="text-white btn btn-outline-secondary">-</Button>
@@ -45,9 +39,7 @@ const ItemCount = ({stock, initial}) => {
           </div>
         </div>
         <Button onClick={handleOnAdd} className="text-white btn btn-outline-secondary">Agregar al carrito</Button>
-    </div>
-  </div>
-          </Container>
+    
       </>
     )
   }
