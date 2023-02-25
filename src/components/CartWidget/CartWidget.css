@@ -1,10 +1,29 @@
-a:link { text-decoration: none; }
-
-
-a:visited { text-decoration: none; }
-
-
-a:hover { text-decoration: none; }
-
-
-a:active { text-decoration: none; }
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .mostrar-cantidad {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    line-height: 17px;
+  }
+  .mostrar-cantidad2 {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    color: #E79D58;
+    background-color: #E79D58;
+    border-radius: 50%;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    line-height: 17px;
+  }

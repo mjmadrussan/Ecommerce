@@ -1,30 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import productosDB from '../../data/productosDB.js';
 import ItemDetail from '../ItemDetail/ItemDetail.jsx';
 import { useParams } from 'react-router-dom';
-
-function getProducto(itemid) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (itemid) {
-                const arrayFiltered = productosDB.find((item) => {
-                    return item.id === itemid;
-                });
-                resolve(arrayFiltered);
-                } else {
-            resolve(productosDB);
-                }
-        }, 1000);
-    });
-}
+import { getItem as getProducto } from '../../services/FireStore.js'
 
 function ItemDetailContainer( {greeting, items} ) {
     const [producto, setProducto] = useState([]);
     const { itemid } = useParams();
     useEffect(() => {
-        getProducto(parseInt(itemid)).then(respuestaPromise => {
-            setProducto(respuestaPromise);
+    getProducto(itemid).then(respuestaPromise => {
+        setProducto(respuestaPromise);
     });
     // .catch(errorPromise => {
     //     console.error(errorPromise);
@@ -32,23 +17,17 @@ function ItemDetailContainer( {greeting, items} ) {
     }, [itemid]);
 
     return (
-        <section id="menu" className="py-5 text-center container">
-        <div className="row py-lg-5">
-            <div className="col-12">
-            <h1 className="fw-light">{producto.name}</h1>
-            <p className="lead text-muted">{producto.category}</p>
-            <p className="lead text-muted">Detalle del producto</p>
-          </div>
-        </div>
-        <div className="album py-5 bg-warning">
+        <section id="menu" className="text-center container">
+        
+        <div className="album bg-degrade">
         <div className="container">
-          <div className="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 g-3">
+          <div className="">
           <ItemDetail detalle={producto} />
           </div></div></div>
       </section>
-
-
+      
+      
         );
     }
-
+    
     export default ItemDetailContainer;

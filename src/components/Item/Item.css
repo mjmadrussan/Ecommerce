@@ -1,31 +1,21 @@
-.card {
-    height: 350px;
-    width: 250px;
+.mostrar-cantidadItem {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 50%;
+    font-size: 12px;
+    position: relative;
     text-align: center;
-    margin: 20px;
-    -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+    line-height: 17px;
+  }
+  .cart-icon2 {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+  }
+.picHover{
+  cursor: pointer;
 }
-
-.header, .footer, .content {
-    width: 100%;
-}
-
-.header, .footer {
-    height: 10%;
-}
-
-.content {
-    height: 90%;
-}
-
-.img-container {
-    height: 200px;
-}
-
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
+  
