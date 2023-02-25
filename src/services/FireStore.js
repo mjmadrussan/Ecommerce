@@ -2,13 +2,21 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, doc, getDoc, addDoc, query, where, collection, getDocs, Timestamp  } from "firebase/firestore/lite";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCjNJ8byRcdPzjX4KgoNdjuo7LYCpTWPQQ",
-  authDomain: "habemus-react.firebaseapp.com",
-  projectId: "habemus-react",
-  storageBucket: "habemus-react.appspot.com",
-  messagingSenderId: "555680038106",
-  appId: "1:555680038106:web:951ea67c9e7d317a6eb9e3"
-};
+
+    apiKey: "AIzaSyCodx0pFCRdfnWtpmTYZ2Cz26lK0paGoJk",
+  
+    authDomain: "shoe-store-6f176.firebaseapp.com",
+  
+    projectId: "shoe-store-6f176",
+  
+    storageBucket: "shoe-store-6f176.appspot.com",
+  
+    messagingSenderId: "49498335844",
+  
+    appId: "1:49498335844:web:b2f6b96b9956b155a88d71"
+  
+  };
+  
 
 
 const app = initializeApp(firebaseConfig);
